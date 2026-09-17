@@ -2,6 +2,7 @@
 #include <csignal>
 #include <ylt/coro_rpc/coro_rpc_server.hpp>
 
+#include "allocator_status.h"
 #include "client_service.h"
 #include "common.h"
 #include "config.h"
@@ -114,6 +115,7 @@ int main(int argc, char *argv[]) {
     if (!FLAGS_log_dir.empty()) {
         google::InitGoogleLogging(argv[0]);
     }
+    mooncake::LogAllocatorStatus();
 
     size_t global_segment_size = string_to_byte_size(FLAGS_global_segment_size);
     size_t local_buffer_size = string_to_byte_size(FLAGS_local_buffer_size);
