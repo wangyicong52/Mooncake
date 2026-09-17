@@ -116,6 +116,7 @@ int main(int argc, char *argv[]) {
         google::InitGoogleLogging(argv[0]);
     }
     mooncake::LogAllocatorStatus();
+    mooncake::InstallAllocatorStatsCollector();
 
     size_t global_segment_size = string_to_byte_size(FLAGS_global_segment_size);
     size_t local_buffer_size = string_to_byte_size(FLAGS_local_buffer_size);

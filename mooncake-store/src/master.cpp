@@ -1413,6 +1413,7 @@ int main(int argc, char* argv[]) {
         google::SetLogSymlink(google::GLOG_INFO, "mooncake_master");
     }
     mooncake::LogAllocatorStatus();
+    mooncake::InstallAllocatorStatsCollector();
 
     // Initialize the master configuration
     mooncake::MasterConfig master_config;

@@ -14,6 +14,7 @@
 #include <ylt/metric/counter.hpp>
 #include <ylt/metric/histogram.hpp>
 #include <ylt/metric/summary.hpp>
+#include "allocator_metric.h"
 #include "environ.h"
 #include "hybrid_metric.h"
 #include "utils.h"
@@ -658,6 +659,7 @@ struct ClientMetric {
     MasterClientMetric master_client_metric;
     TransferOperationMetric transfer_operation_metric;
     SsdMetric ssd_metric;
+    AllocatorMetric allocator_metric;
 
     /**
      * @brief Creates a ClientMetric instance based on environment variables
